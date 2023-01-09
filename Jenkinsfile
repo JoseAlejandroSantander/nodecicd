@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo "init"
                 sh "docker build -t prueba-cicd ."
-                sh "docker tag ${name-app} JoseAlejandroSantander/nodecicd:${BUILD_NUMBER}"
+                sh "docker tag prueba-cicd JoseAlejandroSantander/nodecicd:${BUILD_NUMBER}"
             }
         }
         stage('docker push') {

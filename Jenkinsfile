@@ -12,7 +12,7 @@ pipeline {
                     sh "docker build -t ${name-app} ."
                 }
                 script {
-                    sh "docker tag ${name-app} formadorfullstacktalentomobile/nodecicd:${BUILD_NUMBER}"
+                    sh "docker tag ${name-app} JoseAlejandroSantander/nodecicd:${BUILD_NUMBER}"
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                     sh "echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin"
                 }
                 script {
-                    sh "docker push formadorfullstacktalentomobile/nodecicd:${BUILD_NUMBER}"
+                    sh "docker push JoseAlejandroSantander/nodecicd:${BUILD_NUMBER}"
                 }
             }
         }
